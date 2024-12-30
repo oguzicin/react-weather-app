@@ -17,7 +17,7 @@ module.exports = {
       // Add more custom font families as needed
     },
     screens: {
-      'custom-xs': { 'max': '350px' },
+      'custom-xs': { 'max': '370px' },
       'custom-xm': { 'max': '800px' },
       'custom-sm': { 'max': '1000px' },
       'custom-m': { 'max': '1500px' },
