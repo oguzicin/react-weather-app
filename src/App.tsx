@@ -50,7 +50,7 @@ function App() {
           </div>
         </section>
         <section className=" pb-2 pt-2">
-          <div className="grid grid-flow-col justify-evenly">
+          <div className="grid grid-flow-col justify-evenly ">
             <Tinybox
               header={"Mon"}
               Icon={TiWeatherStormy}

@@ -10,7 +10,7 @@ type Props = {
 
 const Tinybox = ({ Icon, header, text }: Props) => {
     return(
-        <div className="bg-white/20 rounded-lg backdrop-blur-sm w-24 h-[118px] ">
+        <div className="bg-white/20 rounded-lg backdrop-blur-sm w-24 h-[118px] custom-xs:w-[20vw]">
             <div className="flex justify-center h-1/4 items-center text-teal-100">
                 {header}
             </div>

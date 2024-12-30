@@ -12,7 +12,7 @@ type Props = {
 
 const MediumBox = ({ Icon, header, text1, text2 }: Props) => {
     return(
-        <div className="flex flex-row bg-white/20 rounded-lg backdrop-blur-sm w-[420px] h-32">
+        <div className="flex flex-row bg-white/20 rounded-lg backdrop-blur-sm w-[420px] h-32 custom-xs:w-[90vw] justify-center">
             <div className=" text-white flex justify-center items-center w-1/3">
             {Icon && <Icon className="text-[40px]" />}
             </div>

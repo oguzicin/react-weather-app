@@ -13,7 +13,7 @@ type Props = {
 
 const Mainbox = ({ icon, header, }: Props) => {
     return(
-        <div className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-[420px] h-[36rem] grid justify-evenly">
+        <div className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-[420px] h-[36rem] grid justify-evenly custom-xs:w-[90vw] custom-xs:h-[30rem]">
             <div className="flex flex-row justify-center text-7xl h-18 text-white">
                 {header}
             </div>
