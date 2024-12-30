@@ -1,6 +1,6 @@
 import React from "react";
 import { IconType } from "react-icons";
-import { FaSearch } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
 
 type Props = {
@@ -11,19 +11,19 @@ type Props = {
     text2?:string;
 };
 
-const Search = ({ icon, header, }: Props) => {
+const MyLocations = ({ icon, header, }: Props) => {
     return(
-        <div className="bg-white/20 rounded-lg backdrop-blur-sm  w-full h-[2.5rem] grid justify-evenly ">
+        <div className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-12 h-[2.5rem] grid justify-evenly">
             <div className="flex flex-row justify-center text-xl text-teal-200 w-full">
                 {header}
             </div>
             <div className="grid grid-flow-col justify-center text-[25px] text-white">
             
-            <FaSearch />
+            <FaLocationDot />
 
             </div>
         </div>
     )
 }
 
-export default Search;
+export default MyLocations;

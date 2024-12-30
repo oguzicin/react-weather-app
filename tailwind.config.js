@@ -18,7 +18,7 @@ module.exports = {
     },
     screens: {
       'custom-xs': { 'max': '370px' },
-      'custom-xm': { 'max': '800px' },
+      'custom-xm': { 'max': '450px' },
       'custom-sm': { 'max': '1000px' },
       'custom-m': { 'max': '1500px' },
     },
