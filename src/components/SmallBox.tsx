@@ -10,7 +10,7 @@ type Props = {
 const SmallBox = ({ icon, header }: Props) => {
     return(
         <div className="bg-white/20 rounded-lg backdrop-blur-sm w-48 h-48 flex flex-col justify-evenly items-center custom-xs:w-[43vw]">
-            <div className="h-fit w-full text-center rounded-md">
+            <div className="h-fit w-full text-center rounded-md text-white">
                 {header}
             </div>
             <div className="h-full w-full flex flex-row justify-evenly rounded-sm p-1">

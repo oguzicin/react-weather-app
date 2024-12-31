@@ -13,7 +13,7 @@ type Props = {
 
 const MyLocations = ({ icon, header, }: Props) => {
     return(
-        <div className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-12 h-[2.5rem] grid justify-evenly">
+        <button className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-12 h-[2.5rem] grid justify-evenly">
             <div className="flex flex-row justify-center text-xl text-teal-200 w-full">
                 {header}
             </div>
@@ -22,7 +22,7 @@ const MyLocations = ({ icon, header, }: Props) => {
             <FaLocationDot />
 
             </div>
-        </div>
+        </button>
     )
 }
 

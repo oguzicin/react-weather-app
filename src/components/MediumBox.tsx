@@ -16,7 +16,7 @@ const MediumBox = ({ Icon, header, text1, text2 }: Props) => {
             <div className=" text-white flex justify-center items-center w-1/3">
             {Icon && <Icon className="text-[40px]" />}
             </div>
-            <div className=" w-1/3 flex flex-col items-center justify-center text-center">
+            <div className=" w-1/3 flex flex-col items-center justify-center text-center text-white">
                 {header}<br></br>
                <span className="text-2xl text-green-300">{text1}</span> 
             </div>
