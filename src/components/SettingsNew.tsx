@@ -21,7 +21,7 @@ const SettingsNew = ({ icon: Icon = RiSettingsFill, header }: Props) => {
     <div>
       {/* Button */}
       <button
-        className="bg-white/20 rounded-lg backdrop-blur-sm w-10 h-[2.5rem] grid justify-evenly"
+        className="bg-white/20 rounded-lg backdrop-blur-sm w-10 h-[2.5rem] grid justify-evenly custom-xs:w-8"
         onClick={togglePanel}
       >
         <div className="flex flex-row justify-center text-xl text-teal-200 w-full">
