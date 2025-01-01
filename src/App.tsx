@@ -22,8 +22,22 @@ import MyLocationsNew from "./components/MyLocationsNew";
 function App() {
   const [term, setTerm] = useState("");
 
+  const getSearchOptions = (value: string) => {
+    fetch(
+      `http://api.openweathermap.org/geo/1.0/direct?q=$[value.trim()]&limit=5&appid=$[procces.env.REACT_APP_API_KEY]`
+    )
+    .then((res) => res.json())
+    .then((data) => console.log({data}))
+
+  }
+
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setTerm(e.target.value);
+    const value = e.target.value.trim()
+    setTerm(value);
+
+    if (value === '') return
+
+    getSearchOptions(value)
   };
   // http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
 
