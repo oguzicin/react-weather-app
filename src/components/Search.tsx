@@ -17,7 +17,7 @@ const Search = ({ icon, header }: Props) => {
 
 
   return (
-    <div className="bg-white/20 rounded-lg backdrop-blur-sm  w-full h-[2.5rem] grid justify-evenly ">
+    <div className="bg-white/20 rounded-lg backdrop-blur-sm  w-full h-[2.5rem] grid justify-evenly custom-xs:max-w-[100px]">
       <div className="flex flex-row justify-center text-xl text-teal-200 w-full">
         {header}
       </div>
