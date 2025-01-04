@@ -19,6 +19,7 @@ import Settings from "./components/Settings";
 import SettingsNew from "./components/SettingsNew";
 import MyLocationsNew from "./components/MyLocationsNew";
 import SearchNew from "./components/SearchNew";
+import { FiWind } from "react-icons/fi";
 
 function App() {
   const [term, setTerm] = useState("");
@@ -50,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-slate-400 h-[full] w-[full] flex flex-row justify-center">
+    <div className="bg-gray-600 h-[full] w-[full] flex flex-row justify-center">
       <div className=" h-[full] w-[full] flex flex-col">
         <section className="">
           <div className="flex flex-row justify-between mt-2 mb-2 w-full gap-4">
@@ -61,7 +62,7 @@ function App() {
         </section>
         <section id="target-section" className=" pb-2 pt-4">
           <div className="grid justify-center gap-10 ">
-            <Mainbox header="Istanbul"></Mainbox>
+            <Mainbox header="Istanbul" text3="Hello"></Mainbox>
           </div>
         </section>
         <section className=" pb-2 pt-2">
@@ -75,10 +76,11 @@ function App() {
         <section className="pb-10 pt-10">
           <div className="grid justify-center gap-10">
             <MediumBox
-              Icon={GiNoseSide}
-              header="Air Pollution:"
+              Icon={FiWind}
+              header="Wind"
               text1="Good"
               text2="15"
+              text3="15"
             ></MediumBox>
             <MediumBox
               Icon={BsFillDropletFill}
@@ -99,6 +101,12 @@ function App() {
               header="Humidity"
               text1="Good"
             ></MediumBox>
+            <MediumBox
+              Icon={GiNoseSide}
+              header="Air Pollution:"
+              text1="Good"
+            ></MediumBox>
+            
           </div>
         </section>
       </div>

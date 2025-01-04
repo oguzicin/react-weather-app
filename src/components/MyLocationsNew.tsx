@@ -42,7 +42,7 @@ const MyLocationsNew = ({ icon: Icon = FaLocationDot, header }: Props) => {
           ></div>
 
           {/* Expanded Content */}
-          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg p-6 z-20 w-1/3 custom-xm:max-w-[90vw] h-fit">
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg shadow-lg p-6 z-20 w-[90vw] custom-xm:max-w-[90vw] h-fit">
             {/* Close Button */}
             <button
               className="absolute top-3 right-3 bg-slate-300 text-white p-2 rounded-md w-10"
