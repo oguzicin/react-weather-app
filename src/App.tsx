@@ -54,10 +54,10 @@ function App() {
     <div className="bg-zinc-800 h-[full] w-[full] flex flex-row justify-center">
       <div className=" h-[full] w-[full] flex flex-col">
         <section className="">
-          <div className="flex flex-row justify-between mt-2 mb-2 w-full gap-4">
-            <MyLocationsNew></MyLocationsNew>
-            <div className="w-full"><SearchNew></SearchNew></div>
-            <SettingsNew></SettingsNew>
+          <div className="flex flex-row justify-between  mt-2 mb-2 w-full gap-2">
+            <div className="w-fit flex justify-center "><MyLocationsNew></MyLocationsNew></div>
+            <div className="w-full flex justify-center"><SearchNew></SearchNew></div>
+            <div className="w-fit flex justify-center"><SettingsNew></SettingsNew></div>
           </div>
         </section>
         <section id="target-section" className=" pb-2 pt-4">
