@@ -51,7 +51,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-gray-600 h-[full] w-[full] flex flex-row justify-center">
+    <div className="bg-zinc-800 h-[full] w-[full] flex flex-row justify-center">
       <div className=" h-[full] w-[full] flex flex-col">
         <section className="">
           <div className="flex flex-row justify-between mt-2 mb-2 w-full gap-4">
