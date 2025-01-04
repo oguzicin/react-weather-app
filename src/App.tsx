@@ -18,6 +18,7 @@ import MyLocations from "./components/MyLocations";
 import Settings from "./components/Settings";
 import SettingsNew from "./components/SettingsNew";
 import MyLocationsNew from "./components/MyLocationsNew";
+import SearchNew from "./components/SearchNew";
 
 function App() {
   const [term, setTerm] = useState("");
@@ -54,7 +55,7 @@ function App() {
         <section className="">
           <div className="flex flex-row justify-between mt-2 mb-2 w-full gap-4">
             <MyLocationsNew></MyLocationsNew>
-            <div className="w-full"><Search></Search></div>
+            <div className="w-full"><SearchNew></SearchNew></div>
             <SettingsNew></SettingsNew>
           </div>
         </section>

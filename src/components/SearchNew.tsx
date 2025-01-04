@@ -41,8 +41,8 @@ const Search = ({ icon }: Props) => {
   return (
     <div className="bg-white/20 rounded-lg backdrop-blur-sm  w-full h-[2.5rem] flex flex-col justify-evenly custom-xs:w-full custom-xs:items-center ">
 
-      <div className="relative flex flex-row justify-between text-[25px] text-white items-center align-middle text-center gap-3 custom-xs:text-base custom-xs:flex-row ">
-        <div className="text-white h-fit">
+      <div className="relative flex flex-row justify-between text-[25px] text-white items-center align-middle text-center gap-3 custom-xs:text-base custom-xs:flex-row ps-2">
+        <div className="text-white h-fit ">
           <FaSearch />
         </div>
         <input
