@@ -1,6 +1,7 @@
 import React, { ChangeEvent, useState } from "react";
 import { IconType } from "react-icons";
 import { FaSearch } from "react-icons/fa";
+import { selectedType } from "..";
 
 type Props = {
   icon?: IconType;
@@ -38,6 +39,7 @@ const SearchNew = ({ icon }: Props) => {
     const value = e.target.value.trim();
     setTerm(value);
 
+
     if (value === "") {
       setOptions([]);
       return;
@@ -49,10 +51,26 @@ const SearchNew = ({ icon }: Props) => {
   const handleOptionClick = (selectedName: string) => {
     setTerm(selectedName); 
     setOptions([]); 
+    console.log(selectedName)
+
+  };
+
+  const handleOptionSelect = (selectedOpt: selectedType) => {
+    setTerm(selectedOpt.name); 
+    setOptions([]); 
+    console.log(selectedOpt)
+
+    fetch(
+      `
+        https://api.openweathermap.org/data/2.5/weather?lat=${selectedOpt.lat}&lon=${selectedOpt.lon}&appid=${process.env.REACT_APP_API_KEY}`
+    )
+
+    .then((res) => res.json())
+    .then((data) => {console.log({data})})
   };
 
   return (
-    <div className="bg-white/20 rounded-lg backdrop-blur-sm w-full h-[2.5rem] flex flex-col justify-evenly custom-xs:w-full custom-xs:items-center ">
+    <div className="bg-white/20 rounded-lg backdrop-blur-sm w-full h-[2.5rem] flex flex-col justify-evenly custom-xs:w-full custom-xs:items-center z-10">
       <div className="relative flex flex-row justify-between text-[25px] text-white items-center align-middle text-center gap-3 custom-xs:text-base custom-xs:flex-row ps-2">
         <div className="text-white h-fit">
           <FaSearch />
@@ -66,11 +84,11 @@ const SearchNew = ({ icon }: Props) => {
         />
         {/* Display Search Options */}
         {options.length > 0 && (
-          <ul className="absolute top-10 left-0 bg-zinc-500 w-full rounded-md shadow-md z-50">
+          <ul className="absolute bg-zinc-400 top-10 p-1 gap-1 flex flex-col left-0 w-full rounded-md shadow-md">
             {options.map((option, index) => (
               <li
                 key={index}
-                className="px-4 py-2 hover:bg-zinc-400 rounded-md cursor-pointer text-black"
+                className="px-4 py-2  hover:bg-zinc-100 rounded-md cursor-pointer text-black"
                 onClick={() => handleOptionClick(option.name)}
               >
                 {option.name}, {option.country}

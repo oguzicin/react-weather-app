@@ -18,7 +18,7 @@ const SettingsNew = ({ icon: Icon = RiSettingsFill, header }: Props) => {
   };
 
   return (
-    <div>
+    <div  className="flex z-50">
       {/* Button */}
       <button
         className="bg-white/20 rounded-lg backdrop-blur-sm w-10 h-[2.5rem] grid justify-evenly custom-xs:w-8"

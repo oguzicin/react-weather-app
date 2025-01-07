@@ -18,7 +18,7 @@ const MyLocationsNew = ({ icon: Icon = FaLocationDot, header }: Props) => {
   };
 
   return (
-    <div>
+    <div className="flex z-50">
       {/* Button */}
       <button
         className="bg-white/20 rounded-lg backdrop-blur-sm max-w-[1000px] w-12 h-[2.5rem] grid justify-evenly custom-xs:w-8"

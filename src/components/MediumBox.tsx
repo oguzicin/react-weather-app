@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { IconType } from "react-icons";
 import { GiNoseSide } from "react-icons/gi";
 
@@ -16,8 +16,25 @@ const MediumBox = ({ Icon, header, text1, text2, text3 }: Props) => {
 
   const toggleExpand = () => setIsExpanded((prev) => !prev);
 
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
+      setIsExpanded(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+
   return (
     <div
+      ref={boxRef}
       onClick={toggleExpand}
       className={`overflow-hidden flex flex-col  bg-white/20 rounded-lg backdrop-blur-sm w-[420px] h-32 custom-xs:w-[90vw] justify-center transition-[height] duration-900 ease-in-out ${
         isExpanded ? "h-64 gap-5 duration-700" : "h-24 gap-0 duration-700"
