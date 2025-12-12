@@ -32,7 +32,7 @@ const MediumBox = ({ Icon, header, text1, text2, text3 }: Props) => {
     <div
       ref={boxRef}
       onClick={toggleExpand}
-      className={`overflow-hidden flex flex-col bg-white/20 rounded-lg backdrop-blur-sm w-[420px] custom-xs:w-[90vw] justify-center transition-[height] duration-700 ease-in-out ${
+      className={`overflow-hidden flex flex-col bg-white/20 rounded-lg backdrop-blur-sm w-[420px] custom-xm:w-[90vw] justify-center transition-[height] duration-700 ease-in-out ${
         isExpanded ? "h-64 gap-5" : "h-24 gap-0"
       }`}
     >
@@ -45,7 +45,7 @@ const MediumBox = ({ Icon, header, text1, text2, text3 }: Props) => {
           <br />
           <span className="text-2xl text-green-300">{text1}</span>
         </div>
-        <div className="w-1/3 flex flex-col items-center justify-center text-center text-3xl text-[#E5D9F2]">
+        <div className="w-1/3 flex flex-col items-center justify-center text-center text-3xl custom-xm:text-[7vw] text-[#E5D9F2]">
           {text2}
         </div>
       </div>

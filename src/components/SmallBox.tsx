@@ -46,7 +46,7 @@ const SmallBox = ({ header, sunrise, sunset, now, timezone }: Props) => {
   const pct = hasData ? clamp(progress * 100, 0, 100) : 0;
 
   return (
-    <div className="bg-white/20 rounded-lg backdrop-blur-sm w-[420px] h-48 flex flex-col justify-evenly items-center custom-xs:w-[90vw] custom-xm:w-[90vw]">
+    <div className="bg-white/20 rounded-lg backdrop-blur-sm w-[420px] h-48 flex flex-col justify-evenly items-center  custom-xm:w-[90vw]">
       {/* Header */}
       <div className="h-fit w-full text-center rounded-md text-white">
         {header}
