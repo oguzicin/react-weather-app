@@ -18,7 +18,7 @@ const Mainbox = ({  iconCode, header, text3, text2 }: Props) => {
   return (
     <div
       /* onClick={toggleExpand} bg-gradient-to-br from-orange-400 from-10% via-orange-600 via-30% to-none to-50% bg-opacity-40*/
-      className={`border-0 rounded-lg bg-none backdrop-blur-sm max-w-[1000px] w-[420px] h-[32rem] grid justify-evenly custom-xs:w-[90vw] custom-xs:h-[39rem] ${
+      className={`border-0 rounded-lg bg-none backdrop-blur-sm max-w-[1000px] w-[420px] h-[32rem] grid justify-evenly custom-xs:w-[90vw] custom-xs:h-[36rem] ${
         isExpanded
           ? "h-[39rem] custom-xs:h-[full] gap-0 duration-700"
           : "h-full gap-16 duration-700"
@@ -27,7 +27,7 @@ const Mainbox = ({  iconCode, header, text3, text2 }: Props) => {
       <div></div>
 
       {/* Şehir + Sıcaklık */}
-      <div className="flex flex-row justify-between gap-2 text-6xl h-18 text-[#E5D9F2]">
+      <div className="flex flex-row justify-between gap-2 custom-xs:text-[14vw] text-6xl h-18 text-[#E5D9F2]">
         <div>{header}</div>
         <div>{text2}C°</div>
       </div>
