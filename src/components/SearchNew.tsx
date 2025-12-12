@@ -20,6 +20,7 @@ type Props = {
 const SearchNew = ({ icon, onSelectLocation }: Props) => {
   const [term, setTerm] = useState("");
   const [options, setOptions] = useState<SelectedType[]>([]);
+  const [isSelected, setIsSelected] = useState(false);
 
   const getSearchOptions = (value: string) => {
     const apiKey = process.env.REACT_APP_API_KEY;
@@ -63,6 +64,7 @@ const SearchNew = ({ icon, onSelectLocation }: Props) => {
   const handleOptionClick = (opt: SelectedType) => {
     setTerm(`${opt.name}, ${opt.country}`);
     setOptions([]);
+    setIsSelected(true);
     onSelectLocation(opt);
   };
 
@@ -77,15 +79,21 @@ const SearchNew = ({ icon, onSelectLocation }: Props) => {
           type="text"
           value={term}
           onChange={onInputChange}
+          onFocus={() => {
+            if (isSelected) {
+              setTerm(""); // 🔥 tıklayınca temizle
+              setIsSelected(false);
+            }
+          }}
           className="flex w-[250px] bg-transparent h-full focus:outline-none custom-xs:w-full"
         />
 
         {options.length > 0 && (
-          <ul className="absolute bg-white/10 backdrop-blur-3xl top-10 p-1 gap-2 flex flex-col left-0 w-full rounded-md shadow-md">
+          <ul className="absolute bg-white/50 backdrop-blur-3xl top-10 p-1 gap-2 flex flex-col left-0 w-full rounded-md shadow-md">
             {options.map((option, index) => (
               <li
                 key={index}
-                className="px-4 py-2 bg-white/20 hover:bg-white/40 rounded-md cursor-pointer text-black"
+                className="px-4 py-2 bg-black/60 hover:bg-white/40 rounded-md cursor-pointer text-white"
                 onClick={() => handleOptionClick(option)}
               >
                 {option.name}, {option.country}

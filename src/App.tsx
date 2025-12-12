@@ -61,7 +61,7 @@ type WeatherResponse = {
     country: string;
   };
 
-    dt: number;
+  dt: number;
   timezone: number;
 };
 
@@ -295,6 +295,10 @@ function App() {
         }`
       : "No wind data";
 
+  const windSpeedKmh = windSpeed !== undefined ? windSpeed * 3.6 : undefined;
+
+  const windGustKmh = windGust !== undefined ? windGust * 3.6 : undefined;
+
   // Forecast’ten ilk 3 saatlik veri (precipitation MediumBox için)
   const next3h = forecast?.list?.[0];
   const rain3h = next3h?.rain?.["3h"] ?? 0;
@@ -314,14 +318,13 @@ function App() {
     : "No forecast data";
 
   // Tinybox için günlük forecast (her 8 index bir gün) – YARINDAN itibaren
-  const tinyForecasts = forecast?.list
-    ? [
-        forecast.list[8],
-        forecast.list[16],
-        forecast.list[24],
-        forecast.list[32],
-      ]
-    : [];
+// ✅ Tinybox için: her günün 12:00 forecast'ı (gerçek günlük ikon)
+const tinyForecasts = forecast?.list
+  ? forecast.list
+      .filter(item => item.dt_txt.includes("12:00:00"))
+      .slice(0, 4)
+  : [];
+
 
   // 🌞 Mainbox için current weather'i ForecastItem formatına çevir
   const currentWeatherItem: ForecastItem | undefined = weather
@@ -385,19 +388,18 @@ function App() {
                 const IconComp = getWeatherIcon(item);
                 return (
                   <Tinybox
-                    key={item.dt}
-                    header={getWeekdayShort(item.dt)} // Mon, Tue...
-                    Icon={IconComp}
+                    header={getWeekdayShort(item.dt)}
+                    iconCode={item.weather[0].icon} // 🔥 API’den gelen icon
                     text={Math.round(item.main.temp).toString()}
                   />
                 );
               })
             ) : (
               <>
-                <Tinybox header={"Mon"} Icon={TiWeatherStormy} text="-" />
-                <Tinybox header={"Tue"} Icon={TiWeatherStormy} text="-" />
-                <Tinybox header={"Wed"} Icon={TiWeatherStormy} text="-" />
-                <Tinybox header={"Thu"} Icon={TiWeatherStormy} text="-" />
+                <Tinybox header={"Mon"} text="-" />
+                <Tinybox header={"Tue"} text="-" />
+                <Tinybox header={"Wed"} text="-" />
+                <Tinybox header={"Thu"} text="-" />
               </>
             )}
           </div>
@@ -412,8 +414,8 @@ function App() {
               header="Wind"
               text1={getWindLabel(windSpeed)}
               text2={
-                windSpeed !== undefined
-                  ? `${windSpeed.toFixed(1)} m/s`
+                windSpeedKmh !== undefined
+                  ? `${windSpeedKmh.toFixed(1)} km/h`
                   : loading
                   ? "Loading..."
                   : "-"
